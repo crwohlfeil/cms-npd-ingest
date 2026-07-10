@@ -5,10 +5,26 @@ description = "Stream the CMS National Provider Directory (NPD) bulk files into 
 readme = "README.md"
 authors = [{ name = "Craig Wohlfeil", email = "crwohlfeil@gmail.com" }]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "duckdb>=1.1",
+    "zstandard>=0.23",
+]
 
 [project.scripts]
 cms-npd-ingest = "cms_npd_ingest:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [build-system]
 requires = ["uv_build>=0.10.2,<0.11.0"]
