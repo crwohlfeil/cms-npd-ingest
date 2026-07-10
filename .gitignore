@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# PyCharm / IntelliJ
+.idea/
+
+data/*
+!data/.gitkeep
+*.duckdb
+*.duckdb.wal
